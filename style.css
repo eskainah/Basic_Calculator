@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Instrument+Serif:ital@0;1&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300&display=swap');
+
 *, ::before, ::after{
     box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Instrument+Serif:ital@0;1&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:wght@300&display=swap');
-
 body{
     font-family: "Fredoka", sans-serif;
     font-weight: 900;
@@ -85,10 +85,38 @@ body{
     background-color: #1d5bc0;
     color: #a1adb6e7;
 }
-/** For mobile devices **/
-@media (max-width: 767px) {
-    .hero svg {
-        width: calc(100% + 1.3px);
-        height: 41px;
+/** For large devices devices **/
+@media (min-width: 767px) {
+    body{
+        background-color: #fff;
+    }
+    .container{
+        width: 20%;
+        height: 90vh;
+        border-radius: 10px;
+        background-color: #000000f3;
+        margin-top: 25px;
+    }
+    .display{
+        width: 90%;
+        margin: auto;
+        height: 30vh;
+    }
+    .userInput{
+        margin-top: 30px;
+        font-size: 1.3rem;
+    }
+    .calOutput{
+        font-size: 2rem;
+        margin-top: 0;
+    }
+    .inputs{
+        width: 90%;
+        height: 55vh;
+        gap: 10px;
+    }
+    .btn{
+        font-size: 1rem;
+        border-radius: 10px;
     }
 }
