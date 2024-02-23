@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Calculator</title>
 </head>
 <body>
     <div class="container">
         <div class="display">
-            <p class="userInput"> 12 + 5 </p>
+            <p class="userInput"></p>
             <p class="calOutput">=17</p>
         </div>
         <div class="inputs">
@@ -30,9 +31,10 @@
             <button class="btn">3</button>
             <button class="btn zero">0</button>
             <button class="btn decBtn">.</button>
-            <button class="btn eql" >=</button>
+            <button class="btn eql" onclick="operate()">=</button>
             
         </div>
     </div>
 </body>
+
 </html>
