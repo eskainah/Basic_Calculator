@@ -5,7 +5,7 @@ const operators = {
     divide: "/"
 };
 let operand_One = "";
-let operand_Two = ""
+let operand_Two = "";
 let sign = "";
 
 const operator = document.querySelectorAll('.sign').forEach(function (selectedOperator) {
@@ -40,13 +40,11 @@ console.log(multiply(num1, num2))
 function divide(a, b){
     return a / b;
 }
- 
-console.log(divide(num1, num2)); */
 
 function operate() {
-    convertInput()
+    collect()
         if (sign === "+") {
-            console.log(add(operand_One, 12));
+            console.log(add(operand_One, operand_Two));
         }
         console.log(sign)
 }
@@ -57,19 +55,38 @@ let user_Input = "";
 const operand = document.querySelectorAll('.btn').forEach(function (digit) {
     const display_Inputs = document.querySelector('.userInput')
     digit.addEventListener('click', () => {
-        digit.textContent != "DEL" && digit.textContent != "AC" && digit.textContent != "=" ? user_Input += event.target.textContent: undefined; //store the num(s) click before an operator
+        if(digit.textContent != "DEL" && digit.textContent != "AC" && digit.textContent != "=" ){
+                user_Input += event.target.textContent; 
+        }
+    
+       //store the num(s) click before an operator
         display_Inputs.textContent = user_Input;// display value on screen 
     })
 });
-/* sign === "" ? console.log("Hey") : console.log("Keep on"); */
 
-
-function convertInput(){
+/* function convertInput(){
+    let sliceInput
     if(user_Input[user_Input.length -1] === "+"){
-        sliceInput = user_Input.slice(0,-1);// remove the last character
-        console.log(sliceInput)
-        operand_One === "" ? operand_One = parseInt(sliceInput): operand_Two = parseInt(user_Input)
-        console.log(typeof(operand_One))
+        sliceInput = user_Input.slice(0,-1); //remove the last character
+        console.log(sliceInput);
+        operand_One === "" ? operand_One = parseInt(sliceInput): operand_Two = parseInt(sliceInput)
+    }else{
+            operand_Two = parseInt(user_Input)
     }
-}
+    console.log(typeof(operand_One), typeof(operand_Two))
+} */
 
+function collect(){
+    const regex = /^(\d+)([+-])(\d+)$/;
+
+    if (regex.test(user_Input)) {
+        const inputArray = user_Input.match(regex)
+        operand_One = parseInt(inputArray[1]);
+        sign = inputArray[2];
+        operand_Two = parseInt(inputArray[3]);
+    }
+        console.log(operand_One);
+        console.log(sign);
+        console.log(operand_Two);
+        console.log(typeof(operand_One), typeof(operand_Two))
+}
