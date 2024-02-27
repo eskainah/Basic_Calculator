@@ -10,3 +10,12 @@ let sign = null;
 let user_Input = "";
 let result = "";
 let display_Output = document.querySelector('.calOutput');
+
+function clearDisplay(){
+    operand_One = "";
+    operand_Two = "";
+    sign = "";
+    user_Input = "";
+    result = "";
+    display_Output.textContent = "";
+  }
