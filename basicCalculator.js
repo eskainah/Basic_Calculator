@@ -94,3 +94,15 @@ if(match){
   operand_Two = parseFloat(match[4]);
 }
 }
+
+function operate() {
+    getOperand()
+    if(operand_One !=null && operand_Two!=""){
+      sign === "+" ? result = operand_One+operand_Two:
+      sign === "-" ? result = operand_One-operand_Two:
+      sign === "*" ? result = operand_One * operand_Two:
+      sign === "/" ? result = operand_One / operand_Two:
+      undefined
+    }
+    display_Output.textContent = result;
+  }
