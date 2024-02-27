@@ -18,4 +18,18 @@ function clearDisplay(){
     user_Input = "";
     result = "";
     display_Output.textContent = "";
-  }
+}
+
+const operator = document.querySelectorAll('.sign').forEach(function (selectedOperator) {
+    selectedOperator.addEventListener('click', () => {
+    const selected = event.target.textContent;
+    //checks if math symbol selected using the ternary operations
+    sign =
+      operators.add === selected ? "+" :
+      operators.subtract === selected ? "-" : 
+      operators.multiply === selected ? "*" :
+      operators.divide === selected ? "/" :
+      "";
+      operate()
+      });
+});
