@@ -76,3 +76,21 @@ function getInput(){
       })
     });  
 }
+
+function getOperand(){
+const regex =  /^(-?\d+(\.\d*)?)([+\-*/])(-?\d+(\.\d*)?)$/;
+let match = regex.exec(user_Input);
+
+if (regex.test(user_Input)) {
+  inputArray = user_Input.match(regex);
+      
+  operand_One = parseFloat(inputArray[1]);
+  sign = inputArray[2];
+  operand_Two = parseFloat(inputArray[3]); 
+}  
+if(match){
+  operand_One = parseFloat(match[1]);
+  sign = match[3];
+  operand_Two = parseFloat(match[4]);
+}
+}
