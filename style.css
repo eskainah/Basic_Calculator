@@ -86,7 +86,7 @@ body{
     color: #a1adb6e7;
 }
 /** For large devices devices **/
-@media (min-width: 767px) {
+@media (min-width: 720px) {
     body{
         background-color: #fff;
     }
