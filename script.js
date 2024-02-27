@@ -5,7 +5,11 @@ const operators = {
     divide: "/"
 };
 let operand_One = "";
+<<<<<<< HEAD
 let operand_Two = "";
+=======
+let operand_Two = ""
+>>>>>>> 7fdcf32d7e39aac4b95cdc118cc1bfddbe9b235c
 let sign = "";
 
 const operator = document.querySelectorAll('.sign').forEach(function (selectedOperator) {
@@ -40,11 +44,21 @@ console.log(multiply(num1, num2))
 function divide(a, b){
     return a / b;
 }
+<<<<<<< HEAD
 
 function operate() {
     collect()
         if (sign === "+") {
             console.log(add(operand_One, operand_Two));
+=======
+ 
+console.log(divide(num1, num2)); */
+
+function operate() {
+    convertInput()
+        if (sign === "+") {
+            console.log(add(operand_One, 12));
+>>>>>>> 7fdcf32d7e39aac4b95cdc118cc1bfddbe9b235c
         }
         console.log(sign)
 }
@@ -55,6 +69,7 @@ let user_Input = "";
 const operand = document.querySelectorAll('.btn').forEach(function (digit) {
     const display_Inputs = document.querySelector('.userInput')
     digit.addEventListener('click', () => {
+<<<<<<< HEAD
         if(digit.textContent != "DEL" && digit.textContent != "AC" && digit.textContent != "=" ){
                 user_Input += event.target.textContent; 
         }
@@ -90,3 +105,21 @@ function collect(){
         console.log(operand_Two);
         console.log(typeof(operand_One), typeof(operand_Two))
 }
+=======
+        digit.textContent != "DEL" && digit.textContent != "AC" && digit.textContent != "=" ? user_Input += event.target.textContent: undefined; //store the num(s) click before an operator
+        display_Inputs.textContent = user_Input;// display value on screen 
+    })
+});
+/* sign === "" ? console.log("Hey") : console.log("Keep on"); */
+
+
+function convertInput(){
+    if(user_Input[user_Input.length -1] === "+"){
+        sliceInput = user_Input.slice(0,-1);// remove the last character
+        console.log(sliceInput)
+        operand_One === "" ? operand_One = parseInt(sliceInput): operand_Two = parseInt(user_Input)
+        console.log(typeof(operand_One))
+    }
+}
+
+>>>>>>> 7fdcf32d7e39aac4b95cdc118cc1bfddbe9b235c
